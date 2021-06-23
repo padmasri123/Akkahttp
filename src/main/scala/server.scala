@@ -7,7 +7,7 @@ object SimpleHttpServer extends HttpApp {
   override def routes: Route =
     pathPrefix("simple") {
       path("num" / IntNumber) { num =>
-        get {  //curl -i -v -X GET http://0.0.0.0:8080/simple/num/1
+        get { 
           complete(HttpEntity(ContentTypes.`text/plain(UTF-8)`, s"Received Get Req with num: $num"))
         }
       }
